@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Link Site
+title: Links
 permalink: /links/
 ---
 
