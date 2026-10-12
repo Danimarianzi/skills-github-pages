@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Links
+title: Link Site
 permalink: /links/
 ---
 
-## Link site
-instagram_username: alchemyofhearts
+## instagram_username: alchemyofhearts
