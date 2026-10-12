@@ -2,3 +2,7 @@ theme: minima
 title: Danimari Anzi's first gitsite
 description: This is where I practice coding
 author: Danimari Anzi
+header_pages:
+  - about.md
+  - links.md
+  - photography.md
