@@ -1,4 +1,8 @@
-theme: minima
-title: Photography by Danimari
-description: alchemyofhearts.com
-author: Danimari Anzi
+---
+layout: page
+title: Photography
+permalink: /photography/
+---
+
+## Alchemy of Hearts
+alchemyofhearts.com
