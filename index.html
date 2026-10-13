@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photography Portfolio</title>
+    <style>
+        /* CSS Styles */
+        :root {
+            --primary-color: #333;
+            --accent-color: #e67e22;
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        /* Fixed the typo here from '-' to '*' */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Added smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section - Updated dead Unsplash link to Picsum */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/id/250/1600/900') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #d35400;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px 80px; /* Increased top padding so fixed header doesn't cover titles */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                padding-bottom: 10px;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Lens & Light</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Capturing Moments</h1>
+        <p>Professional Photography for Life's Beautiful Moments</p>
+        <a href="#gallery" class="btn">View Portfolio</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <!-- Updated dead Unsplash link -->
+                <img src="https://picsum.photos/id/64/400/400" alt="Photographer Portrait">
+            </div>
+            <div class="about-text">
+                <h3>Passionate Storyteller</h3>
+                <!-- Completed your cut-off text -->
+                <p>Welcome to my portfolio. I specialize in capturing the essence of moments through my lens. With over 10 years of experience, I bring a unique perspective to every shoot, whether it's a wedding, a landscape, or a portrait session. My goal is to freeze time and preserve your most treasured memories forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Added missing HTML) -->
+    <section id="gallery">
+        <h2>My Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/111/400/300" alt="Gallery Image 1">
+                <div class="gallery-overlay">Vintage Cars</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/112/400/300" alt="Gallery Image 2">
+                <div class="gallery-overlay">Landscapes</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/113/400/300" alt="Gallery Image 3">
+                <div class="gallery-overlay">City Lights</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/114/400/300" alt="Gallery Image 4">
+                <div class="gallery-overlay">Portraits</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/115/400/300" alt="Gallery Image 5">
+                <div class="gallery-overlay">Nature</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/116/400/300" alt="Gallery Image 6">
+                <div class="gallery-overlay">Macro</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Added missing HTML) -->
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lens & Light Photography. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
