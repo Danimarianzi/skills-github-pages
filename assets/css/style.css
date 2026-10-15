@@ -1,56 +1,82 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between; /* Pushes left and right sides apart */
-  align-items: center;            /* Centers them vertically */
-  padding: 30px 60px;             /* Adds breathing room from screen edges */
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
+/* --- HOME HERO SECTION --- */
 .hero-home {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/heroes/uno.jpg');
-  background-size: cover;       /* Scales photo to fill screen without warping */
-  background-position: center;  /* Keeps the center of the photo in view */
-  color: #ffffff;               /* Makes all text inside the hero white */
+  height: 100vh; /* Fills 100% of the screen height */
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/images/heroes/slide-1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 0 60px 40px 60px; /* 60px spacing on left/right, 40px on bottom */
+  
+  /* Flexbox to position the title in the middle and controls at the bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  transition: background-image 0.6s ease-in-out; /* Smooth fade when switching slides */
 }
 
-.light-theme {
-  text-align: center;
-  background-color: #ece3da;
-  padding: 100px 20px;
+/* Pushes the main "Photography for the Soul" headline into the upper-middle area */
+.hero-title-box {
+  margin-bottom: auto;
+  margin-top: 32vh; 
 }
 
-.dark-theme {
-  text-align: center;
-  background-color: #3b3531;
-  padding: 100px 20px;
+.hero-title-box h1 {
+  font-family: 'Lora', serif;
+  font-size: 3.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Space between photographs */
+/* --- MIDDLE ROW (READ MORE on left, Location on right) --- */
+.hero-middle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Aligns READ MORE with the bottom line of the right text */
+  margin-bottom: 35px;
 }
 
+.read-more-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ffffff; /* Creates the short white underline under READ MORE */
+}
 
+.hero-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* --- HORIZONTAL DIVIDING LINE --- */
+.hero-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
+  margin-bottom: 25px;
+}
+
+/* --- BOTTOM SLIDESHOW CONTROLS (←  01 / 02  →) --- */
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-arrow {
+  background: transparent; /* Removes ugly default grey button box */
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer; /* Turns mouse into a pointing hand when hovering */
+}
+
+.slider-counter {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
