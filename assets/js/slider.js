@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 2. Keep track of which slide is currently showing (In coding, counting starts at 0)
   let currentSlideIndex = 0;
 
+  // Base for asset URLs (set in the layout via Liquid)
+  const SITE_BASE = (window.SITE_BASEURL || '');
+
   // 3. Connect JavaScript to the HTML elements on your page using their IDs
   const heroElement = document.getElementById('hero-slider');
   const headingElement = document.getElementById('slide-heading');
@@ -37,15 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateSlide() {
     const slide = slides[currentSlideIndex];
 
-    // Change the background photo
-    heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('${slide.image}')`;
+    // Change the background photo (prepend SITE_BASE to support project pages)
+    heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('${SITE_BASE}${slide.image}')`;
 
     // Update the text and link (in case you want Slide 2 to say something different than Slide 1!)
     headingElement.textContent = slide.heading;
     subtitleElement.innerHTML = slide.subtitle;
 
     if (linkElement) {
-      linkElement.href = slide.link;
+      linkElement.href = SITE_BASE + slide.link;
     }
 
     // Format numbers with a leading zero (e.g., "01  /  02")
@@ -56,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 5. Listen for a click on the Right Arrow (→)
   if (nextButton) {
-    nextButton.addEventListener('click', function () {
+    nextButton.addEventListener('click', function() {
       currentSlideIndex = currentSlideIndex + 1;
       // If we go past the last slide, loop back to the first slide (0)
       if (currentSlideIndex >= slides.length) {
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 6. Listen for a click on the Left Arrow (←)
   if (prevButton) {
-    prevButton.addEventListener('click', function () {
+    prevButton.addEventListener('click', function() {
       currentSlideIndex = currentSlideIndex - 1;
       // If we go before the first slide, loop around to the last slide
       if (currentSlideIndex < 0) {
