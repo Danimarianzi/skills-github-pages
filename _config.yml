@@ -1,8 +1,4 @@
-theme: minima
-title: Danimari Anzi's first gitsite
-description: This is where I practice coding
+title: "Alchemy of Hearts"
+description: "Special Ocassion & Creative Photographer - Grand Rapids, MI."
 author: Danimari Anzi
-header_pages:
-  - about.md
-  - links.md
-  - photography.md
+markdown: kramdown
