@@ -1,13 +1,13 @@
 // 1. Your list of slides (You can change the image paths or add a 3rd slide anytime!)
 const slides = [
   {
-    image: '/assets/images/heroes/slide-1.jpg',
+    image: '/assets/images/heroes/uno.jpg',
     heading: 'Photography for the Soul',
     subtitle: 'Special Occasion &amp; Creative<br>Photographer - Grand Rapids,<br>MI.',
     link: '/behind-alchemy.html'
   },
   {
-    image: '/assets/images/heroes/slide-2.jpg',
+    image: '/assets/images/heroes/dos.jpg',
     heading: 'Photography for the Soul',
     subtitle: 'Special Occasion &amp; Creative<br>Photographer - Grand Rapids,<br>MI.',
     link: '/portfolio.html'
