@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between; /* Pushes left and right sides apart */
+  align-items: center;            /* Centers them vertically */
+  padding: 30px 60px;             /* Adds breathing room from screen edges */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.hero-home {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/heroes/uno.jpg');
+  background-size: cover;       /* Scales photo to fill screen without warping */
+  background-position: center;  /* Keeps the center of the photo in view */
+  color: #ffffff;               /* Makes all text inside the hero white */
+}
+
+.light-theme {
+  text-align: center;
+  background-color: #ece3da;
+  padding: 100px 20px;
+}
+
+.dark-theme {
+  text-align: center;
+  background-color: #3b3531;
+  padding: 100px 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Space between photographs */
+}
+
+
