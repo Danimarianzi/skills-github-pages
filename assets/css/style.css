@@ -5,19 +5,17 @@
 .hero-home {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ "/assets/images/heroes/uno.jpg" | relative_url }}');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ '/assets/images/heroes/uno.jpg' | relative_url }}');
   background-size: cover;
   background-position: center;
   color: #ffffff;
   padding: 0 60px 40px 60px;
-  /* Flexbox to position the title in the middle and controls at the bottom */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   transition: background-image 0.6s ease-in-out;
 }
 
-/* Pushes the main "Photography for the Soul" headline into the upper-middle area */
 .hero-title-box {
   margin-bottom: auto;
   margin-top: 32vh;
@@ -35,27 +33,13 @@
   left: 0;
   width: 100%;
   z-index: 10;
+}
+
+.site-header {
   display: flex;
-  justify-content: space-between; /* Pushes left and right sides apart */
-  align-items: center;            /* Centers them vertically */
-  padding: 30px 60px;             /* Adds breathing room from screen edges */
-}
-
-/* Make header links white and remove underline (overrides browser defaults) */
-.site-header a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.site-header a:hover,
-.site-header a:focus {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.site-header .site-brand {
-  font-size: 1.6rem;
-  color: inherit;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
 }
 
 .dropdown-menu {
@@ -82,7 +66,7 @@
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Space between photographs */
+  gap: 20px;
 }
 
 .hero-title-box h1 {
@@ -92,11 +76,10 @@
   letter-spacing: 0.5px;
 }
 
-/* --- MIDDLE ROW (READ MORE on left, Location on right) --- */
 .hero-middle-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Aligns READ MORE with the bottom line of the right text */
+  align-items: flex-end;
   margin-bottom: 35px;
 }
 
@@ -107,7 +90,7 @@
   letter-spacing: 2.5px;
   text-transform: uppercase;
   padding-bottom: 8px;
-  border-bottom: 1px solid #ffffff; /* Creates the short white underline under READ MORE */
+  border-bottom: 1px solid #ffffff;
 }
 
 .hero-subtitle {
@@ -117,14 +100,12 @@
   text-align: right;
 }
 
-/* --- HORIZONTAL DIVIDING LINE --- */
 .hero-divider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.85);
   margin-bottom: 25px;
 }
 
-/* --- BOTTOM SLIDESHOW CONTROLS (←  01 / 02  →) --- */
 .slider-controls {
   display: flex;
   justify-content: space-between;
@@ -132,11 +113,11 @@
 }
 
 .slider-arrow {
-  background: transparent; /* Removes ugly default grey button box */
+  background: transparent;
   border: none;
   color: #ffffff;
   font-size: 1.4rem;
-  cursor: pointer; /* Turns mouse into a pointing hand when hovering */
+  cursor: pointer;
 }
 
 .slider-counter {
