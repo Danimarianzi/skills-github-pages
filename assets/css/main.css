@@ -1,0 +1,168 @@
+/* --- 1. GLOBAL RESET --- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Lora', serif;
+background-color: #ece3da;
+color: #3b3531;
+}
+
+/* --- 2. TOP NAVIGATION BAR --- */
+.site-header {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 10;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 35px 60px;
+}
+
+.site-brand {
+color: #ffffff;
+text-decoration: none;
+font-size: 1.25rem;
+letter-spacing: 0.5px;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 35px;
+align-items: center;
+}
+
+.nav-links li {
+position: relative;
+}
+
+.nav-links a {
+color: #ffffff;
+text-decoration: none;
+font-size: 0.95rem;
+letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+opacity: 0.8;
+}
+
+/* --- 3. DROPDOWN MENUS --- */
+.dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: rgba(35, 30, 27, 0.92);
+list-style: none;
+padding: 12px 0;
+min-width: 170px;
+border-radius: 2px;
+}
+
+.dropdown-menu li {
+padding: 6px 20px;
+}
+
+.dropdown-menu a {
+font-size: 0.85rem;
+display: block;
+white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+/* --- 4. HOME HERO SECTION --- */
+.hero-home {
+height: 100vh;
+width: 100%;
+background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/heroes/uno.jpg');
+background-size: cover;
+background-position: center;
+color: #ffffff;
+padding: 0 60px 50px 60px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.hero-title-box {
+margin-bottom: auto;
+margin-top: 34vh;
+}
+
+.hero-title-box h1 {
+font-family: 'Lora', serif;
+font-size: 3.8rem;
+font-weight: 400;
+letter-spacing: 0.5px;
+color: #ffffff;
+}
+
+/* --- 5. HERO LOWER ROW & DIVIDER --- */
+.hero-middle-row {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+margin-bottom: 35px;
+}
+
+.read-more-link {
+color: #ffffff;
+text-decoration: none;
+font-size: 0.75rem;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+padding-bottom: 8px;
+border-bottom: 1px solid #ffffff;
+}
+
+.hero-subtitle {
+font-family: 'Lora', serif;
+font-size: 1.25rem;
+line-height: 1.5;
+text-align: right;
+color: #ffffff;
+}
+
+.hero-divider {
+border: none;
+border-top: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* --- 6. PAGE SECTIONS & FOOTER --- */
+.light-theme {
+text-align: center;
+background-color: #ece3da;
+color: #3b3531;
+padding: 100px 20px;
+}
+
+.dark-theme {
+text-align: center;
+background-color: #3b3531;
+color: #ece3da;
+padding: 100px 20px;
+}
+
+.photo-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+}
+
+footer {
+text-align: center;
+padding: 40px 20px;
+background-color: #ece3da;
+color: #3b3531;
+font-size: 0.85rem;
+}
