@@ -9,6 +9,7 @@ body {
 font-family: 'Lora', serif;
 background-color: #ece3da;
 color: #3b3531;
+overflow-x: hidden;
 }
 
 /* --- 2. TOP NAVIGATION BAR --- */
@@ -29,6 +30,7 @@ color: #ffffff;
 text-decoration: none;
 font-size: 1.25rem;
 letter-spacing: 0.5px;
+white-space: nowrap;
 }
 
 .nav-links {
@@ -47,6 +49,7 @@ color: #ffffff;
 text-decoration: none;
 font-size: 0.95rem;
 letter-spacing: 0.5px;
+white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -83,6 +86,7 @@ display: block;
 /* --- 4. HOME HERO SECTION --- */
 .hero-home {
 height: 100vh;
+height: 100dvh;
 width: 100%;
 background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/heroes/uno.jpg');
 background-size: cover;
@@ -123,6 +127,7 @@ letter-spacing: 2.5px;
 text-transform: uppercase;
 padding-bottom: 8px;
 border-bottom: 1px solid #ffffff;
+white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -165,4 +170,65 @@ padding: 40px 20px;
 background-color: #ece3da;
 color: #3b3531;
 font-size: 0.85rem;
+}
+
+/* --- 7. MOBILE PHONE ADJUSTMENTS (Screens 768px and smaller) --- */
+@media (max-width: 768px) {
+
+/* Stack Brand Title on top, and Menu Links in a clean row underneath */
+.site-header {
+flex-direction: column;
+align-items: flex-start;
+gap: 14px;
+padding: 25px 24px;
+}
+
+.site-brand {
+font-size: 1.15rem;
+}
+
+/* Tighten spacing between Home, Info, Portfolio, Contact so all 4 fit on screen */
+.nav-links {
+gap: 20px;
+width: 100%;
+flex-wrap: wrap;
+}
+
+.nav-links a {
+font-size: 0.85rem;
+}
+
+/* Keep dropdown menus from getting cut off on the right edge of the phone */
+.dropdown-menu {
+left: auto;
+right: 0;
+min-width: 150px;
+}
+
+/* Reduce side padding from 60px to 24px to give text room to breathe */
+.hero-home {
+padding: 0 24px 30px 24px;
+}
+
+/* Scale down "Photography for the Soul" so "Photography" fits on one line */
+.hero-title-box {
+margin-top: 28vh;
+}
+
+.hero-title-box h1 {
+font-size: 2.3rem;
+line-height: 1.2;
+}
+
+/* Adjust bottom row spacing and font size for narrow screens */
+.hero-middle-row {
+margin-bottom: 20px;
+gap: 15px;
+}
+
+.hero-subtitle {
+font-size: 0.95rem;
+line-height: 1.4;
+}
+
 }
